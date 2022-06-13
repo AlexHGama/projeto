@@ -1,0 +1,97 @@
+.modal{
+
+  position: fixed;
+  height: 200px;
+  z-index: 2000;
+  background-color: rgb(193, 189, 198);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 160px;
+  margin: 50px 135px auto;
+  max-width: 85%;
+  min-width: 450px;
+  width: 70%;
+
+  
+}
+
+.fechar{
+  border-radius: unset;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 0;
+  min-width: unset;
+  padding: 5px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+
+
+}
+
+.textmodal {
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.modal input{
+  margin-bottom: 27px;
+  min-width: 308px;
+  width: 87%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.modal select {
+  cursor: pointer;
+  font-family: var(--font_primary_family);
+  font-weight: 600;
+  margin-bottom: 10px;
+  max-width: 337px;
+  min-width: 315px;
+  width: 0.7%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+
+.input2 {
+  background-color: #6747c4;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 700;
+  margin: 12px 0 84px;
+  min-width: 350px;
+  padding: 24px;
+  transition: -webkit-filter .2s;
+  transition: filter .2s;
+  transition: filter .2s,-webkit-filter .2s;
+  width: 50%;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+
+
+  .modal {
+    justify-content: unset;
+    max-width: unset;
+    min-width: 450px;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(193, 189, 198);
+    display: flex;
+    flex-direction: column;
+    margin: 80px auto auto; 
+  }
+
+}
