@@ -103,7 +103,8 @@ const Tela = () => {
               
                 
             </div>
-            
+            <Aprovado/>
+            </>
             
           )}
         </div>
