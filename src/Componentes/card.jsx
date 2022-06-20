@@ -1,4 +1,4 @@
-export const cards = [
+export const card = [
   // valid card
   {
     card_number: '1111111111111111',

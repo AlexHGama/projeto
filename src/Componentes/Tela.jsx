@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from 'react';
-//import { cards } from './Cards/card';
-import mask from './mask';
-import style from'./Componente.css';
-import'./Modal';
-
+import React, { useState, useEffect } from "react";
+import { card } from "./card";
+import mask from "./mask";
+import style from "./Componente.css";
+import "./Modal";
+import Aprovado from "./Aprovado";
+//import Recusado from './Recusado';
 
 const Tela = () => {
   const [users, setUsers] = useState([]);
   const [modal, setModal] = useState(false);
   const [pagamento, setPagamento] = useState(null);
+  const [isCardValid, setIsCardValid] = useState(false);
+  const [pay, setPay] = useState(true);
 
   useEffect(() => {
-    fetch('https://www.mocky.io/v2/5d531c4f2e0000620081ddce')
+    fetch("https://www.mocky.io/v2/5d531c4f2e0000620081ddce")
       .then((resp) => resp.json())
       .then((data) => setUsers(data))
       .catch((erro) => console.log(erro));
@@ -20,6 +23,11 @@ const Tela = () => {
   const abrirModal = (user) => {
     setPagamento(user);
     setModal(!modal);
+  };
+
+  const dadosCartao = async (e) => {
+    e.preventDefault();
+    setPay(false);
   };
 
   return (
@@ -51,61 +59,50 @@ const Tela = () => {
               </div>
             </div>
           ))}
-           
+
           {modal && (
-            
             <div className="modal">
-              
-              <div className="textmodal">
-                <p>Pagamento para:  {pagamento.name}</p>
-              </div>
-             
-              <div onClick={() => abrirModal()}>
-                <p className="fechar">X</p>                  
-              </div>
+              {pay ? (
+                <div>
+                  <div className="textmodal">
+                    <p>Pagamento para: {pagamento.name}</p>
+                  </div>
 
-              <div>
-                <input
-                  type="text"
-                  placeholder="R$: 0,00"
-                  onKeyUp={mask}
-                  maxLength={30}
-                  required
-                />
-              </div>
-              <select name="selectCard" defaultValue={'info_card'}>
-                  <option disabled>Informe o seu cartão:</option>,
-                  
-                 
-                    return (
-                      <option value="111111111111111" >
-                        " Cartão com final "
-                        "111"
-                      </option>
-                      <option value="4111111111111234" >
-                        " Cartão com final "
-                        "1234"
-                      </option>
+                  <div onClick={() => abrirModal()}>
+                    <p className="fechar">X</p>
+                  </div>
 
-                      <input2
-                        className={style.btn}
-                        type="submit"
-                        value={'Pagamento'}>
-                      </input2> 
+                  <form onSubmit={dadosCartao}>
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="R$: 0,00"
+                        onKeyUp={mask}
+                        maxLength={30}
+                        required
+                      />
+                    </div>
+                    {/*<Informe o cartão*/}
+                    <select name="selectCard" defaultValue={"info_card"}>
+                      {card.map((cards) => (
+                        <option
+                          key={cards.card_number}
+                          value={cards.card_number}
+                        >
+                          Cartão com final {cards.card_number.substring(12)}
+                        </option>
+                      ))}
+                    </select>
 
-                    );                  
-              </select>      
-             
-              <div>
-                 
-
-              </div>
-              
-                
+                    <div className="botaomodal">
+                      <input type="submit" value="Pagar" />
+                    </div>
+                  </form>
+                </div>
+              ) : (
+                <>{false ? <Aprovado /> : <p>negado</p>}</>
+              )}
             </div>
-            <Aprovado/>
-            </>
-            
           )}
         </div>
       </section>

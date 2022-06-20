@@ -1,16 +1,16 @@
 .modal{
 
   position: fixed;
-  height: 200px;
+  height: 329px;
   z-index: 2000;
   background-color: rgb(193, 189, 198);
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 160px;
-  margin: 50px 135px auto;
-  max-width: 85%;
+  top: 150px;
+  margin: 50px 130px auto;
+  max-width: 70%;
   min-width: 450px;
   width: 70%;
 
@@ -39,10 +39,10 @@
 }
 
 .modal input{
-  margin-bottom: 27px;
-  min-width: 308px;
+  margin-bottom: 15px;
+  min-width: 273px;
   width: 87%;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
 }
 
@@ -51,32 +51,35 @@
   font-family: var(--font_primary_family);
   font-weight: 600;
   margin-bottom: 10px;
-  max-width: 337px;
-  min-width: 315px;
+  max-width: 331px;
+  min-width: 297px;
   width: 0.7%;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
 }
 
 
-.input2 {
-  background-color: #6747c4;
+.botaomodal {
   border: none;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
   font-size: 1em;
   font-weight: 700;
-  margin: 12px 0 84px;
+  margin: 0px 0 30px;
   min-width: 350px;
-  padding: 24px;
+  padding: 0px;
   transition: -webkit-filter .2s;
   transition: filter .2s;
   transition: filter .2s,-webkit-filter .2s;
   width: 50%;
 }
 
-
+.p{
+  line-height: 23.5px;
+  margin: unset;
+  margin-left: 0px;
+}
 
 
 @media screen and (max-width: 500px) {

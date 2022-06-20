@@ -1,0 +1,11 @@
+div{
+  position: fixed;
+  top: 25vh;
+  left: 25%;
+  background: aliceblue;
+  width: 50%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
